@@ -35,14 +35,19 @@ All models are trained on employee performance data to classify productivity lev
 📁 Project Structure
 
 your_project/
+
 │
 ├── app.py                     # Main Flask app
 ├── model.pkl                  # Trained ML model
+
+
 ├── templates/                 # HTML pages
 │   ├── home.html
 │   ├── predict.html
 │   ├── submit.html
 │   └── about.html
+
+
 ├── static/                    # Static files
 │   └── plots/                 # Auto-generated graphs
 │       ├── bar.png

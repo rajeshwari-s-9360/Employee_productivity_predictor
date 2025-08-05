@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Predict Productivity</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #bb30e6, #5dd1c2), linear-gradient(to right, #c79815, #0a6183);
+            background-blend-mode: screen;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #0a0a0a;
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px 60px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        h1 {
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            color: #070707;
+            text-shadow: 1px 1px 2px #000;
+        }
+        
+        form {
+            display: grid;
+            gap: 15px;
+        }
+        
+        input[type="number"] {
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            outline: none;
+            font-size: 1em;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        button {
+            padding: 12px;
+            background: linear-gradient(to right, #9c80a5, #8bc9c1);
+            color: #0a0a0a;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: 0.3s;
+        }
+        
+        button:hover {
+            background-color: #857b7b;
+        }
+        
+        .back-link {
+            display: block;
+            margin-top: 20px;
+            color: #161616;
+            text-decoration: none;
+            font-size: 0.95em;
+            opacity: 0.8;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🔍 Enter Employee Details</h1>
+        <form action="/predict" method="post">
+            <input type="number" step="any" name="targeted_productivity" placeholder="Targeted Productivity" required />
+            <input type="number" step="any" name="smv" placeholder="SMV" required />
+            <input type="number" step="any" name="wip" placeholder="WIP" required />
+            <input type="number" step="any" name="over_time" placeholder="Over Time" required />
+            <input type="number" step="any" name="incentive" placeholder="Incentive" required />
+            <input type="number" step="any" name="idle_time" placeholder="Idle Time" required />
+            <input type="number" step="any" name="idle_men" placeholder="Idle Men" required />
+            <input type="number" name="no_of_style_change" placeholder="Number of Style Changes" required />
+            <input type="number" name="no_of_workers" placeholder="Number of Workers" required />
+            <button type="submit">Predict Productivity</button>
+        </form>
+        <a class="back-link" href="/">⬅ Back to Home</a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Welcome | Productivity Predictor</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #bb30e6, #5dd1c2), linear-gradient(to right, #c79815, #0a6183);
+            background-blend-mode: screen;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #0f0f0f;
+        }
+        
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #070707, #0d0d0e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            margin: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #030303;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: background 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome to the Productivity Predictor</h1>
+        <p>
+            Predict employee productivity levels using smart data and visualization tools.
+        </p>
+        <a href="/predict" class="btn">Start Prediction</a>
+        <a href="/about" class="btn">About</a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Prediction Result</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #bb30e6, #5dd1c2), linear-gradient(to right, #c79815, #0a6183);
+            background-blend-mode: screen;
+            color: rgb(12, 12, 12) 111;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px;
+        }
+        
+        h1,
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px #000;
+        }
+        
+        .result-box {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 30px;
+            width: 80%;
+            max-width: 800px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .result-box strong {
+            font-size: 1.3em;
+        }
+        
+        .status-high {
+            color: #00ff88;
+        }
+        
+        .status-medium {
+            color: #ffcc00;
+        }
+        
+        .status-low {
+            color: #ff4d4d;
+        }
+        
+        h3 {
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+        
+        .charts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            justify-content: center;
+            width: 100%;
+            max-width: 1000px;
+        }
+        
+        .charts img {
+            width: 100%;
+            border-radius: 12px;
+            border: 3px solid #fff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .charts img:hover {
+            transform: scale(1.03);
+        }
+        
+        .back-link {
+            margin-top: 30px;
+            font-size: 1em;
+            text-decoration: none;
+            color: #aad;
+            opacity: 0.8;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🔮 Prediction Result</h1>
+    <div class="result-box">
+        <p>
+            {% if prediction >= 0.75 %}
+            <strong class="status-high">The employee is Highly Productive ✅</strong
+        >
+        {% elif prediction >= 0.5 %}
+        <strong class="status-medium"
+          >The employee is Medium Productive ⚠️</strong
+        >
+        {% else %}
+        <strong class="status-low">The employee is Low Productive ❌</strong> {% endif %}
+        </p>
+        <h3>Prediction Score: {{ prediction|round(2) }}</h3>
+    </div>
+
+    <h2>📊 Data Visualizations</h2>
+    <div class="charts">
+        <img src="{{ url_for('static', filename='plots/bar.png') }}" alt="Bar Chart" />
+        <img src="{{ url_for('static', filename='plots/scatter.png') }}" alt="Scatter Plot" />
+        <img src="{{ url_for('static', filename='plots/line.png') }}" alt="Line Plot" />
+        <img src="{{ url_for('static', filename='plots/pie.png') }}" alt="Pie Chart" />
+        <img src="{{ url_for('static', filename='plots/hist.png') }}" alt="Histogram" />
+        <img src="{{ url_for('static', filename='plots/box.png') }}" alt="Boxplot" />
+    </div>
+
+    <a class="back-link" href="/predict">🔁 Make Another Prediction</a>
+</body>
+
+</html>
